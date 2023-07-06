@@ -44,6 +44,12 @@ const handleClose = () => {
   visible.value = false
 }
 const handleSecondClose = () => {
+  itemForm.id = ''
+  itemForm.text = ''
+  itemForm.textEn = ''
+  itemForm.value = ''
+  itemForm.description = ''
+  itemForm.seq = 1
   resetFields()
   loadDictItem()
   secondVisible.value = false
@@ -140,6 +146,7 @@ const handleView = (record: any) => {
   secondVisible.value = true
 }
 const handleEdit = (record: any) => {
+  console.log(record,'record');
   itemForm.id = record.id
   itemForm.text = record.text
   itemForm.textEn = record.textEn
