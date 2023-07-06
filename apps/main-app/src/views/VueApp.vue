@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {hostMap} from "../wujie.config.ts";
+import {hostMap} from "@/wujie.config";
 
 const vueUrl = ref(hostMap('//localhost:8890/'))
 </script>

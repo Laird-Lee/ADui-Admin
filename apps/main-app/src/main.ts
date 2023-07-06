@@ -9,19 +9,19 @@ import {
     DocFullScrollPlugin,
     InstanceofPlugin
 } from 'wujie-polyfill'
-import {hostMap, lifecycles} from "./wujie.config.ts";
+import {hostMap, lifecycles} from "./wujie.config";
 import App from './App.vue'
 import 'ant-design-vue/dist/reset.css';
 import '@/styles/index.less'
 
-const {setupApp, preloadApp, destroyApp} = WujieVue;
+const {setupApp, preloadApp} = WujieVue;
 
 const degrade =
     window.localStorage.getItem("degrade") === "true" ||
     !window.Proxy ||
     !window.CustomElementRegistry;
 const props = {
-    jump: (name) => {
+    jump: (name: string) => {
         router.push({name});
     },
 };
@@ -60,9 +60,11 @@ setupApp({
 if (window.Proxy) {
     preloadApp({
         name: "react-app",
+        url: ''
     });
     preloadApp({
         name: "vue-app",
+        url: ''
     });
 }
 

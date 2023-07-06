@@ -6,7 +6,7 @@ const routes: RouteRecordRaw[] = [
     {
         path: "/",
         component: Layout,
-        redirect: '/home',
+        redirect: '/login',
         children: [
             {
                 path: "/home",
@@ -20,8 +20,17 @@ const routes: RouteRecordRaw[] = [
                 path: "/vue-app/:url?",
                 component: () => import('@/views/VueApp.vue'),
             },
+            {
+                path: "/dict",
+                component: () => import('@/views/Dict/index.vue'),
+            },
         ]
     },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('@/views/Login.vue')
+    }
 ]
 
 const router = createRouter({

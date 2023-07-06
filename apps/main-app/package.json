@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
+    "add": "pnpm add -S @adui/request@workspace:*",
+    "rm": "pnpm rm request",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@adui/request": "workspace:^",
     "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "4.0.0-rc.5",
     "pinia": "^2.1.4",
@@ -18,6 +21,7 @@
     "wujie-vue3": "^1.0.17"
   },
   "devDependencies": {
+    "@types/node": "^20.3.3",
     "@vitejs/plugin-vue": "^4.1.0",
     "less": "^4.1.3",
     "less-loader": "^11.1.3",

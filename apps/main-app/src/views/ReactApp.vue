@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {hostMap} from "../wujie.config.ts";
+import {hostMap} from "@/wujie.config";
 
 const reactUrl = ref(hostMap('//localhost:8889/'))
 </script>
