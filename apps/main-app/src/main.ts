@@ -1,5 +1,6 @@
 import {createApp} from 'vue'
 import router from "./router";
+import pinia from './store'
 import WujieVue from "wujie-vue3";
 import {
     LocationReloadPlugin,
@@ -72,4 +73,5 @@ if (window.Proxy) {
 const app = createApp(App)
 app.use(WujieVue)
 app.use(router)
+app.use(pinia)
 app.mount('#app')

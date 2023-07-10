@@ -20,7 +20,7 @@ interface DictInfo {
 const visible = ref<boolean>(false)
 const secondVisible = ref<boolean>(false)
 const openType = ref<'add' | 'edit' | 'view'>('add')
-const dictInfo = reactive<DictInfo>({
+const dictInfo: DictInfo = reactive({
   dictId: '',
   dictName: '',
   dictCode: ''
@@ -90,7 +90,7 @@ const columns = ref<any[]>([
 
 const useForm = Form.useForm
 
-interface ItemData {
+export interface DictItem {
   text: string
   textEn: string
   value: string
@@ -100,7 +100,7 @@ interface ItemData {
 }
 
 
-const itemForm = reactive<ItemData>({
+const itemForm: DictItem = reactive({
   text: '',
   textEn: '',
   value: '',
@@ -146,7 +146,7 @@ const handleView = (record: any) => {
   secondVisible.value = true
 }
 const handleEdit = (record: any) => {
-  console.log(record,'record');
+  console.log(record, 'record');
   itemForm.id = record.id
   itemForm.text = record.text
   itemForm.textEn = record.textEn
@@ -196,7 +196,7 @@ defineExpose({
 </script>
 
 <template>
-  <a-drawer title="字典表配置" width="720" :open="visible" @close="handleClose">
+  <a-drawer title="字典表配置" width="720" :open="visible" @close="handleClose" :body-style="{ paddingBottom: '80px' }">
     <a-space direction="vertical" size="large">
       <a-form layout="vertical">
         <a-row :gutter="24">
@@ -257,7 +257,8 @@ defineExpose({
         </template>
       </a-table>
     </a-space>
-    <a-drawer :title="title" width="520" :open="secondVisible" @close="handleSecondClose">
+    <a-drawer :title="title" width="520" :open="secondVisible" @close="handleSecondClose"
+              :body-style="{ paddingBottom: '80px' }">
       <a-form layout="vertical" :disabled="!editable">
         <a-form-item label="中文" name="text" v-bind="validateInfos.text">
           <a-input v-model:value="itemForm.text" placeholder="请输入中文" allow-clear/>

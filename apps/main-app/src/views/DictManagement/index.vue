@@ -20,7 +20,7 @@ interface SearchState {
   dictCode: string
 }
 
-const searchForm = reactive<SearchState>({
+const searchForm: SearchState = reactive({
   dictName: '',
   dictCode: ''
 })
@@ -66,7 +66,7 @@ onMounted(() => {
 
 const tableData = ref<[]>([])
 const tableLoading = ref<boolean>(false)
-const pagination = reactive<TablePaginationConfig>({
+const pagination: TablePaginationConfig = reactive({
   current: 1,
   pageSize: 10,
   pageSizeOptions: ['10', '20', '30', '40'],

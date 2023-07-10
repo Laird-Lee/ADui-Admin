@@ -32,7 +32,7 @@ interface DictState {
 
 const useForm = Form.useForm
 
-const dictForm = reactive<DictState>({
+const dictForm: DictState = reactive({
   dictName: '',
   dictCode: '',
   description: ''
@@ -89,7 +89,8 @@ defineExpose({
 </script>
 
 <template>
-  <a-modal v-model:open="visible" :title="title" @ok="handleSubmit" @cancel="handleCancel" :confirm-loading="confirmLoading">
+  <a-modal v-model:open="visible" :title="title" @ok="handleSubmit" @cancel="handleCancel"
+           :confirm-loading="confirmLoading">
     <a-form layout="vertical">
       <a-form-item label="字典表名称" name="dictName" v-bind="validateInfos.dictName">
         <a-input v-model:value="dictForm.dictName" placeholder="请输入字典表名称"/>

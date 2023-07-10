@@ -21,9 +21,13 @@ const routes: RouteRecordRaw[] = [
                 component: () => import('@/views/VueApp.vue'),
             },
             {
-                path: "/dict",
-                component: () => import('@/views/Dict/index.vue'),
+                path: "/dict-management",
+                component: () => import('@/views/DictManagement/index.vue'),
             },
+            {
+                path: '/menu-management',
+                component: () => import('@/views/MenuManagement/index.vue')
+            }
         ]
     },
     {

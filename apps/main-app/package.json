@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "add": "pnpm add -S @adui/request@workspace:*",
+    "add:2": "pnpm add -D @vitejs/plugin-vue-jsx",
     "rm": "pnpm rm request",
     "preview": "vite preview"
   },
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@types/node": "^20.3.3",
     "@vitejs/plugin-vue": "^4.1.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
     "less": "^4.1.3",
     "less-loader": "^11.1.3",
     "typescript": "^5.0.2",
