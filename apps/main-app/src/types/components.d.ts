@@ -37,6 +37,8 @@ declare module 'vue' {
     ATextarea: typeof import('ant-design-vue/es')['Textarea']
     ATooltip: typeof import('ant-design-vue/es')['Tooltip']
     Dict: typeof import('./../components/Dict/index.vue')['default']
+    DictCheckbox: typeof import('./../components/Dict/DictCheckbox.vue')['default']
+    DictRadio: typeof import('./../components/Dict/DictRadio.vue')['default']
     DictSelect: typeof import('./../components/Dict/DictSelect.vue')['default']
     Header: typeof import('./../components/Layout/Header.vue')['default']
     HelloWorld: typeof import('./../components/HelloWorld.vue')['default']

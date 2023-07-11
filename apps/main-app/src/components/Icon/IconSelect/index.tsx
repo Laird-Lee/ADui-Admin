@@ -4,28 +4,37 @@ import {Icon} from "@/components/Icon";
 import './index.less'
 
 export const IconSelect = defineComponent({
-    setup() {
+    props: {
+        placeholder: String,
+        modelValue: {
+            type: String,
+            required: true
+        },
+    },
+    emits: ['update:modelValue'],
+    setup({placeholder, modelValue}, {emit}) {
         const visible = ref(false)
-        const modelValue = ref('')
+        const originValue = ref(modelValue)
         return () => {
             const inputRef = ref(null)
             return <div>
                 <Popover open={visible.value} placement="bottomLeft" style={{width: '300px'}}
                          v-slots={{
-                             content: () => <SelectContent modelValue={modelValue.value}
+                             content: () => <SelectContent modelValue={originValue.value}
                                                            onClose={() => {
                                                                visible.value = false
                                                            }}
                                                            onSelect={val => {
-                                                               modelValue.value = val
+                                                               originValue.value = val
+                                                               emit('update:modelValue', val)
                                                                visible.value = false
                                                            }}/>
                          }}>
                     <Input ref={inputRef} v-slots={{
-                        addonBefore: () => ShowIcon(modelValue.value)
+                        addonBefore: () => ShowIcon(originValue.value)
                     }} allowClear={true} onChange={e => {
-                        modelValue.value = e.target.value || ''
-                    }} value={modelValue.value} onFocus={() => {
+                        originValue.value = e.target.value || ''
+                    }} placeholder={placeholder} value={originValue.value} onFocus={() => {
                         visible.value = true
                     }}></Input>
                 </Popover>

@@ -26,7 +26,7 @@ const type = ref<'add' | 'edit'>('add')
 interface DictState {
   dictName: string
   dictCode: string
-  description?: string
+  description: string
   id?: string
 }
 

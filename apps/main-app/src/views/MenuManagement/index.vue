@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {PlusSquareOutlined} from "@ant-design/icons-vue";
-import {Icon} from "@/components/Icon/index"
-import {IconSelect} from "@/components/Icon/IconSelect"
+import MenuModal from "@/views/MenuManagement/MenuModal.vue";
 
 const columns = ref([
   {
@@ -29,16 +28,18 @@ const columns = ref([
     ellipsis: true,
   },
   {
-    title: '数据值',
-    dataIndex: 'value',
-    key: 'value',
-    ellipsis: true,
-  },
-  {
     title: '操作',
     key: 'action',
   },
 ])
+
+interface DataItem {
+  id: string
+  appCode: string
+  routerName: string
+  icon: string
+  router: string
+}
 
 const rowSelection = ref({
   checkStrictly: false,
@@ -58,16 +59,11 @@ const rowSelection = ref({
   <a-space direction="vertical" size="large">
     <a-button type="primary">
       <plus-square-outlined #icon/>
-      新增
+      新增主菜单
     </a-button>
-    <icon-select></icon-select>
-    <icon type="AccountBookFilled"></icon>
-    <dict dict-code="app_type" value="vue-app"/>
-    <dict-select type="select" dict-code="app_type" value="vue-app"/>
-    <dict-select type="radio" dict-code="app_type" value="vue-app"/>
-    <dict-select type="checkbox" dict-code="app_type" :value="['vue-app']"/>
     <a-table :columns="columns" :row-selection="rowSelection" :pagination="false" bordered></a-table>
   </a-space>
+  <menu-modal />
 </template>
 
 <style scoped>

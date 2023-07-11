@@ -2,10 +2,9 @@
 import {DictItem} from "@/views/DictManagement/DictDrawer.vue"
 import {useDictStore} from "@/store";
 
-const {dictCode, value, mode} = defineProps<{
+const {dictCode, value} = defineProps<{
   dictCode: string,
-  value: string | string[],
-  mode?: 'multiple' | 'tags' | 'combobox',
+  value: string,
   placeholder?: string
 }>()
 
@@ -27,14 +26,9 @@ watch(() => originValue.value, (val) => {
 </script>
 
 <template>
-  <a-select v-model:value="originValue"
-            :placeholder="placeholder"
-            showSearch
-            :mode="mode"
-            allow-clear
-            style="width: 100%;">
-    <a-select-option v-for="item in dict" :value="item.value">{{ item.text }}</a-select-option>
-  </a-select>
+  <a-radio-group v-model:value="originValue">
+    <a-radio v-for="item in dict" :value="item.value">{{ item.text }}</a-radio>
+  </a-radio-group>
 </template>
 
 <style scoped>
