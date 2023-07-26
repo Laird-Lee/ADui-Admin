@@ -5,13 +5,13 @@
       <Header/>
       <a-layout-content :style="{ margin: '24px 16px 0', overflow: 'initial'}">
         <watermark :content="['ADui Admin', '@ADui']">
-          <div :style="{ padding: '24px', background: '#fff',minHeight:'817px' }">
+          <div :style="{ padding: '24px', background: '#fff',minHeight:'863px' }">
             <router-view/>
           </div>
         </watermark>
       </a-layout-content>
       <a-layout-footer :style="{ textAlign: 'center' }">
-        ADui Admin ©2023 Created by ADui
+        ADui Admin © 2023 Created by ADui
       </a-layout-footer>
     </a-layout>
   </a-layout>

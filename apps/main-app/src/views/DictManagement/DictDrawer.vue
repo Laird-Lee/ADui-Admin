@@ -237,10 +237,10 @@ defineExpose({
                 编辑
               </a-button>
               <a-popconfirm
-                  title="确认删除该字典表项？"
-                  ok-text="确认"
-                  cancel-text="取消"
-                  @confirm="handleConfirmDelete(record)"
+                title="确认删除该字典表项？"
+                ok-text="确认"
+                cancel-text="取消"
+                @confirm="handleConfirmDelete(record)"
               >
                 <template #icon>
                   <question-circle-outlined style="color: red"/>
