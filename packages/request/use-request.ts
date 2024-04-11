@@ -26,9 +26,9 @@ export function useRequest(url: string, method: 'get' | 'post' | 'patch' | 'dele
     })
 
     async function getRequest(url: string, data: object, config?: object) {
-        const res = await http.get(url, {params: data, ...config})
-        if (res.data.code !== 200) return [res.data, null]
-        return [null, res.data.message]
+        const res = await axios.get(url, {params: data, ...config})
+        if (res.data.code !== 200) return [null, res.data.message]
+        return [res.data, null]
     }
 
     async function postRequest(url: string, data: object, config?: object) {

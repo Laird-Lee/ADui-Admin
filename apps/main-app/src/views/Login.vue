@@ -30,17 +30,17 @@ const disabled = computed(() => {
     <div class="login-container">
       <a-card style="width: 500px" title="ADui Admin">
         <a-form
-            :model="formState"
-            name="normal_login"
-            class="login-form"
-            hideRequiredMark
-            @finish="onFinish"
-            @finishFailed="onFinishFailed"
+          :model="formState"
+          name="normal_login"
+          class="login-form"
+          hideRequiredMark
+          @finish="onFinish"
+          @finishFailed="onFinishFailed"
         >
           <a-form-item
-              label="Username"
-              name="username"
-              :rules="[{ required: true, message: 'Please input your username!' }]"
+            label="Username"
+            name="username"
+            :rules="[{ required: true, message: 'Please input your username!' }]"
           >
             <a-input v-model:value="formState.username">
               <template #prefix>
@@ -50,9 +50,9 @@ const disabled = computed(() => {
           </a-form-item>
 
           <a-form-item
-              label="Password"
-              name="password"
-              :rules="[{ required: true, message: 'Please input your password!' }]"
+            label="Password"
+            name="password"
+            :rules="[{ required: true, message: 'Please input your password!' }]"
           >
             <a-input-password v-model:value="formState.password">
               <template #prefix>

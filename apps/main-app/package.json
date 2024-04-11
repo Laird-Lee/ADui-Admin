@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "add": "pnpm add -S @adui/request@workspace:*",
-    "add:2": "pnpm add -D @vitejs/plugin-vue-jsx",
+    "add:2": "pnpm add -S dayjs",
     "rm": "pnpm rm request",
     "preview": "vite preview"
   },
@@ -15,6 +15,7 @@
     "@adui/request": "workspace:^",
     "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "4.0.0-rc.5",
+    "dayjs": "^1.11.9",
     "pinia": "^2.1.4",
     "vue": "^3.2.47",
     "vue-router": "4",
